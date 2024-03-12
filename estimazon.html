@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <meta charset="UTF-8">
+    <title>Estimazon</title>
+    <script src="funciones.js"></script>
+  </head>
+  <body>
+    <div class="titulo">
+      ESTIMAZON
+      <!-------------------------------------------------------------------------------------------------------
+                                       BOTONES MENU SUPERIOR
+      --------------------------------------------------------------------------------------------------------->
+      <div class="botones">
+        <div id="botones-comprador" style="display: inline-block;">
+          <button class="boton" onclick=resetAllCookies(0)> Cerrar sesión</button>
+          <button class="boton" onclick="location.href='comprador/perfil.html'">Perfil</button>
+        </div>
+        <div class="botones" id="botones-usuario" style="margin-right: 100px;">
+          <button class="boton" onclick="location.href='inicio-sesion/iniciar_sesion.html'">Identifícate</button>
+        </div>
+        <button class="boton" onclick="location.href='comprador/cesta/cesta.php'">
+          <img src="carrito.png" alt="Carrito" class="icono-carrito" />Cesta
+        </button>
+      </div>
+    </div>
+    <!---------------------------------------------------------------
+                          BOTONES CATALOGO
+    ----------------------------------------------------------------->
+    <div class="contenedor-central contenedor-estimazon">
+      <div class="botonAlimentos">
+        <div class="imagen-fondo"></div>
+        <div class="contenido" onclick="accederCategoria('Alimentos')">Alimentos</div>
+      </div>
+        <div class="botonArte">
+          <div class="imagen-fondo"></div>
+          <div class="contenido" onclick="accederCategoria('Arte y Manualidades')">Arte y manualidades</div>
+        </div>
+      <div class="botonHogar">
+        <div class="imagen-fondo"></div>
+        <div class="contenido" onclick="accederCategoria('Artículos para el hogar')">Artículos para el hogar</div>
+      </div>
+      <div class="botonElectronica">
+        <div class="imagen-fondo"></div>
+        <div class="contenido" onclick="accederCategoria('Electrónica')">Electrónica</div>
+      </div>
+      <div class="botonInstrumento">
+        <div class="imagen-fondo"></div>
+        <div class="contenido" onclick="accederCategoria('Instrumentos musicales')">Instrumentos musicales</div>
+      </div>
+      <div class="botonJuguete">
+        <div class="imagen-fondo"></div>
+        <div class="contenido" onclick="accederCategoria('Juguetes')">Juguetes</div>
+      </div>
+      <div class="botonLibros">
+        <div class="imagen-fondo"></div>
+        <div class="contenido" onclick="accederCategoria('Libros')">Libros</div>
+      </div>
+      <div class="botonOficina">
+        <div class="imagen-fondo"></div>
+        <div class="contenido" onclick="accederCategoria('Oficina y papelería')">Oficina y papelería</div>
+      </div>
+      <div class="botonTodo">
+        <div class="imagen-fondo"></div>
+        <div class="contenido" onclick="accederCategoria('Catálogo')">Todo</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', actualizarBotones); // cuando se recarga la página se actualizan los botones
+    function accederCategoria(param_categoria) { // función que lleva a cada categoría
+      window.location.href = 'comprador/catalogo.php?categoria=' + param_categoria;
+    }
+</script>
+</html>
